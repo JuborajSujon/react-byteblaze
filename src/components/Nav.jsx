@@ -15,8 +15,8 @@ const Nav = () => {
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const toggleTheme = localStorage.getItem("theme");
-    let html = document.getElementsByTagName("html");
-    html[0].setAttribute("data-theme", toggleTheme);
+    let html = document.querySelector("html");
+    html.setAttribute("data-theme", toggleTheme);
   }, [theme]);
 
   return (
