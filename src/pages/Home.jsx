@@ -1,11 +1,21 @@
-import Nav from "../components/Nav";
-
 const Home = () => {
   return (
     <div>
-      {/*Navbar*/}
-
-      <h1>Home page</h1>
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold">Wellcome to ByteBlaze</h1>
+            <p className="py-6">
+              ByteBlaze is the bridge between the complex world of technology
+              and the curious eager to understand it.
+            </p>
+            <div>
+              <button className="btn btn-primary">Read Blogs</button>
+              <button className="btn btn-primary">Bookmarks</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

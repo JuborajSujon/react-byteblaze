@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [theme, setTheme] = useState("light");
@@ -23,20 +23,32 @@ const Nav = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg px-4 fixed z-10">
       <div className="flex-1">
-        <a className="btn btn-ghost gap-0 text-secondary text-2xl">
+        <Link to="/" className="btn btn-ghost gap-0 text-secondary text-2xl">
           Byte<span className="text-primary">Blaze</span>
-        </a>
+        </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 *:font-bold">
+        <ul className="menu menu-horizontal px-1 *:font-bold hidden sm:flex">
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li className="text-primary">
-            <Link to="/blogs">Blogs</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/bookmarks">Bookmarks</Link>
+            <NavLink
+              to="/blogs"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}>
+              Blogs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/bookmarks"
+              className={({ isActive }) => (isActive ? "text-primary" : "")}>
+              Bookmarks
+            </NavLink>
           </li>
         </ul>
         <label className="cursor-pointer grid place-items-center">
