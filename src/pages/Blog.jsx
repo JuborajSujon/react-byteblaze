@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -29,15 +29,15 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <div className="text-gray-100">
+        <div className="">
           {/* Tabs */}
           <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap ">
             <Link
-              // to=""
+              to=""
               onClick={() => setTabIndex(0)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 0 ? "border border-b-0" : "border-b"
-              }  rounded-t-lg border-gray-400 text-black`}>
+              }  rounded-t-lg border-gray-400 `}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -52,11 +52,11 @@ const Blog = () => {
               <span>Content</span>
             </Link>
             <Link
-              // to={`author`}
+              to={`author`}
               onClick={() => setTabIndex(1)}
               className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
                 tabIndex === 1 ? "border border-b-0" : "border-b"
-              }  rounded-t-lg border-gray-400 text-black`}>
+              }  rounded-t-lg border-gray-400 `}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -72,6 +72,7 @@ const Blog = () => {
               <span>Author</span>
             </Link>
           </div>
+          <Outlet />
         </div>
       </article>
       <div>
