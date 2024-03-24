@@ -5,19 +5,27 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Bookmarks from "./pages/Bookmarks";
+import MainLayout from "./layouts/MainLayout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/blogs",
-    element: <Blogs />,
-  },
-  {
-    path: "/bookmarks",
-    element: <Bookmarks />,
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        // index: true,
+        element: <Home />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/bookmarks",
+        element: <Bookmarks />,
+      },
+    ],
   },
 ]);
 
