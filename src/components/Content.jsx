@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import placeholderImage from "../assets/404.jpg";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 const Content = () => {
   const blog = useLoaderData();
@@ -31,7 +32,9 @@ const Content = () => {
         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
           {title}
         </h3>
-        <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+        <Markdown remarkPlugins={[[remarkGfm]]} rehypePlugins={[rehypeRaw]}>
+          {body_html}
+        </Markdown>
       </div>
     </div>
   );
