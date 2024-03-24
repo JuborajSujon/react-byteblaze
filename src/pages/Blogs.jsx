@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import BlogCard from "../components/BlogCard";
 
 const Blogs = () => {
   // const [blogs, setBlogs] = useState([]);
@@ -27,144 +28,15 @@ const Blogs = () => {
               {blogs[0].title}
             </h3>
             <span className="text-xs text-gray-400">
-              {new Date(blogs[0].created_at).toLocaleDateString()}
+              {new Date(blogs[0].published_at).toLocaleDateString()}
             </span>
             <p>{blogs[0].description}</p>
           </div>
         </a>
         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline border-2 border-slate-300 p-1">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 bg-gray-500"
-              src="https://source.unsplash.com/random/480x360?1"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 21, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline ">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 "
-              src="https://source.unsplash.com/random/480x360?2"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 22, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline ">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 "
-              src="https://source.unsplash.com/random/480x360?3"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 23, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline  hidden sm:block">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 "
-              src="https://source.unsplash.com/random/480x360?4"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 24, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline  hidden sm:block">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 "
-              src="https://source.unsplash.com/random/480x360?5"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 25, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="max-w-sm mx-auto group hover:no-underline focus:no-underline  hidden sm:block">
-            <img
-              role="presentation"
-              className="object-cover w-full rounded h-44 "
-              src="https://source.unsplash.com/random/480x360?6"
-            />
-            <div className="p-6 space-y-2">
-              <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">
-                In usu laoreet repudiare legendos
-              </h3>
-              <span className="text-xs text-gray-400">January 26, 2021</span>
-              <p>
-                Mei ex aliquid eleifend forensibus, quo ad dicta apeirian
-                neglegentur, ex has tantas percipit perfecto. At per tempor
-                albucius perfecto, ei probatus consulatu patrioque mea, ei
-                vocent delicata indoctum pri.
-              </p>
-            </div>
-          </a>
+          {blogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </div>
         <div className="flex justify-center">
           <button
