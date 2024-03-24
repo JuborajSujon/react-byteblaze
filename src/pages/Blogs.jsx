@@ -1,7 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
+import Loader from "../components/Loader";
 
 const Blogs = () => {
+  const navigation = useNavigation();
   // const [blogs, setBlogs] = useState([]);
   // useEffect(() => {
   //   fetch("https://dev.to/api/articles?per_page=20&&top=7")
@@ -11,6 +13,9 @@ const Blogs = () => {
   const blogs = useLoaderData();
 
   // console.log(blogs);
+  if (navigation.state === "loading") {
+    return <Loader />;
+  }
   return (
     <section className="">
       <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
