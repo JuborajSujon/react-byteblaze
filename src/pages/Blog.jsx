@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
 import { MdBookmarkAdd } from "react-icons/md";
+import { setLocalStorageData } from "../utility/localStorage";
 
 const Blog = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -15,7 +16,7 @@ const Blog = () => {
   } = blog;
 
   const handleBookmark = () => {
-    console.log(blog);
+    setLocalStorageData("bookmarks", blog);
   };
   return (
     <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
